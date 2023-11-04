@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Tote-2024</string>
+    <string name="app_name">Тотализатор 2024</string>
+    <string name="rating">Рейтинг</string>
+    <string name="stake">Ставки</string>
+    <string name="prognosis">Прогноз</string>
+    <string name="games">Игры</string>
 </resources>
