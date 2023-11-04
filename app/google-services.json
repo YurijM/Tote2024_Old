@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "205431100957",
+    "project_id": "tote-2024",
+    "storage_bucket": "tote-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205431100957:android:b628f3b411524d64b9d8f4",
+        "android_client_info": {
+          "package_name": "com.mu.tote_2024"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_t8TY6A63WmpBtFxbodAGaA8mQd_wk44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
