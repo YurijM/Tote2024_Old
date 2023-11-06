@@ -80,7 +80,11 @@ fun SplashScreen(navController: NavHostController) {
             )
         )
         delay(1000L)
-        navController.navigate(Routes.MAIN_SCREEN)
+        navController.navigate(Routes.MAIN_SCREEN) {
+            popUpTo(Routes.SPLASH_SCREEN) {
+                inclusive = true
+            }
+        }
     }
 
     Surface(
