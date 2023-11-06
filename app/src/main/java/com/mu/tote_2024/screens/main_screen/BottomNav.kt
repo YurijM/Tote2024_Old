@@ -75,7 +75,7 @@ fun BottomNav() {
         ) {
             Image(
                 modifier =Modifier.size(24.dp),
-                painter = painterResource(id = R.drawable.author),
+                painter = painterResource(id = R.drawable.author_gray),
                 contentDescription = "author"
             )
             Text(

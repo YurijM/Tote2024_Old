@@ -23,7 +23,6 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.mu.tote_2024.R
 import com.mu.tote_2024.ui.theme.ColorApplication
@@ -72,7 +71,7 @@ fun SplashScreen(navController: NavHostController) {
                 }
             )
         )
-        delay(4000L)
+        delay(3500L)
         navController.navigate(Routes.MAIN_SCREEN)
     }
 
@@ -96,8 +95,6 @@ fun SplashScreen(navController: NavHostController) {
                     .scale(scaleText.value),
                 text = text,
                 color = ColorApplication,
-                //fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
             )
         }
     }
