@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -34,6 +36,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    kotlin {
+        jvmToolchain(8)
+    }
     buildFeatures {
         compose = true
     }
@@ -58,6 +63,14 @@ dependencies {
 
     // Navigation
     implementation("androidx.navigation:navigation-compose:2.7.5")
+
+    // Dagger hilt
+    val dhVersion = "2.48.1"
+    implementation("com.google.dagger:hilt-android:$dhVersion")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+    ksp("com.google.dagger:dagger-compiler:2.48") // Dagger compiler
+    ksp("com.google.dagger:hilt-compiler:2.48")
+
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

@@ -28,7 +28,9 @@ import com.mu.tote_2024.ui.theme.ColorApplication
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ApplicationBar() {
+fun ApplicationBar(
+    isAdmin: Boolean
+) {
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -51,13 +53,15 @@ fun ApplicationBar() {
                     painter = painterResource(id = R.drawable.mu),
                     contentDescription = "user_photo"
                 )
-                IconButton(
-                    onClick = { /*TODO*/ }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Settings,
-                        contentDescription = "settings"
-                    )
+                if (isAdmin) {
+                    IconButton(
+                        onClick = { /*TODO*/ }
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Settings,
+                            contentDescription = "settings"
+                        )
+                    }
                 }
                 IconButton(
                     onClick = { /*TODO*/ }
