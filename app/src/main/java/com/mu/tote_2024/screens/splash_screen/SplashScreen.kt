@@ -9,6 +9,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.AssistChip
+import androidx.compose.material3.AssistChipDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -30,6 +37,7 @@ import com.mu.tote_2024.ui.theme.ColorBackgroundLight
 import com.mu.tote_2024.utils.Routes
 import kotlinx.coroutines.delay
 
+@OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnrememberedAnimatable")
 @Composable
 fun SplashScreen(navController: NavHostController) {
@@ -47,9 +55,9 @@ fun SplashScreen(navController: NavHostController) {
         withStyle(
             style = SpanStyle(fontWeight = FontWeight.Bold)
         ) {
-                pushStringAnnotation(tag = companyText, annotation = companyText)
-                append(companyText)
-            }
+            pushStringAnnotation(tag = companyText, annotation = companyText)
+            append(companyText)
+        }
     }
 
     LaunchedEffect(key1 = true) {
@@ -89,12 +97,30 @@ fun SplashScreen(navController: NavHostController) {
                 painter = painterResource(id = R.drawable.author),
                 contentDescription = "Logo"
             )
-            Text(
+            AssistChip(
                 modifier = Modifier
                     .padding(top = 8.dp)
                     .scale(scaleText.value),
-                text = text,
-                color = ColorApplication,
+                border = AssistChipDefaults.assistChipBorder(
+                    borderColor = ColorApplication
+                ),
+                colors = AssistChipDefaults.assistChipColors(
+                    containerColor = Color.White,
+                    leadingIconContentColor = ColorApplication,
+                    labelColor = ColorApplication,
+                ),
+                onClick = { /*TODO*/ },
+                label = {
+                    Text(
+                        text = text,
+                    )
+                },
+                leadingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Settings,
+                        contentDescription = "settings"
+                    )
+                }
             )
         }
     }
