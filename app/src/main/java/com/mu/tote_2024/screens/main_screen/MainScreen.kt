@@ -14,6 +14,9 @@ fun MainScreen() {
         containerColor = ColorBackgroundLight,
         bottomBar = {
             BottomNav()
+        },
+        topBar = {
+            ApplicationBar()
         }
     ) {
 

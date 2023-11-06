@@ -54,24 +54,24 @@ fun SplashScreen(navController: NavHostController) {
 
     LaunchedEffect(key1 = true) {
         scale.animateTo(
-            targetValue = 2f,
-            animationSpec = tween(
-                durationMillis = 3000,
-                easing = {
-                    OvershootInterpolator(4f).getInterpolation(it)
-                }
-            )
-        )
-        scaleText.animateTo(
             targetValue = 1f,
             animationSpec = tween(
                 durationMillis = 3000,
                 easing = {
+                    OvershootInterpolator(10f).getInterpolation(it)
+                }
+            )
+        )
+        scaleText.animateTo(
+            targetValue = .85f,
+            animationSpec = tween(
+                durationMillis = 3000,
+                easing = {
                     OvershootInterpolator(4f).getInterpolation(it)
                 }
             )
         )
-        delay(3500L)
+        delay(1000L)
         navController.navigate(Routes.MAIN_SCREEN)
     }
 
@@ -91,7 +91,7 @@ fun SplashScreen(navController: NavHostController) {
             )
             Text(
                 modifier = Modifier
-                    .padding(top = 48.dp)
+                    .padding(top = 8.dp)
                     .scale(scaleText.value),
                 text = text,
                 color = ColorApplication,
