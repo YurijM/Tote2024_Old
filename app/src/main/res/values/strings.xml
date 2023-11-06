@@ -4,4 +4,6 @@
     <string name="stake">Ставки</string>
     <string name="prognosis">Прогноз</string>
     <string name="games">Игры</string>
+    <string name="login">Авторизация</string>
+    <string name="sign_in">Регистрация</string>
 </resources>

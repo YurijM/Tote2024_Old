@@ -3,6 +3,9 @@ package com.mu.tote_2024.utils
 object Routes {
     const val SPLASH_SCREEN = "splash_screen"
     const val MAIN_SCREEN = "main_screen"
+    const val LOGON_SCREEN = "logon_screen"
+    const val LOGIN_SCREEN = "login_screen"
+    const val SIGN_IN_SCREEN = "sign_screen"
     const val RATING_SCREEN = "rating_screen"
     const val STAKES_SCREEN = "stakes_screen"
     const val PROGNOSIS_SCREEN = "prognosis_screen"
