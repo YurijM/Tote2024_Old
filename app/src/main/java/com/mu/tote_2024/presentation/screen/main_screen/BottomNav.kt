@@ -1,4 +1,4 @@
-package com.mu.tote_2024.screens.main_screen
+package com.mu.tote_2024.presentation.screen.main_screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -22,8 +22,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.mu.tote_2024.R
-import com.mu.tote_2024.ui.theme.ColorApplication
-import com.mu.tote_2024.ui.theme.ColorBackground
+import com.mu.tote_2024.presentation.theme.ColorApplication
+import com.mu.tote_2024.presentation.theme.ColorBackground
 
 @Composable
 fun BottomNav() {

@@ -1,4 +1,4 @@
-package com.mu.tote_2024.screens.main_screen
+package com.mu.tote_2024.presentation.screen.main_screen
 
 import com.mu.tote_2024.R
 import com.mu.tote_2024.utils.Routes

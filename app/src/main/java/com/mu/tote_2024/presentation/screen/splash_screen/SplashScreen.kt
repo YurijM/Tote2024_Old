@@ -1,4 +1,4 @@
-package com.mu.tote_2024.screens.splash_screen
+package com.mu.tote_2024.presentation.screen.splash_screen
 
 import android.annotation.SuppressLint
 import android.view.animation.OvershootInterpolator
@@ -32,8 +32,8 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.mu.tote_2024.R
-import com.mu.tote_2024.ui.theme.ColorApplication
-import com.mu.tote_2024.ui.theme.ColorBackgroundLight
+import com.mu.tote_2024.presentation.theme.ColorApplication
+import com.mu.tote_2024.presentation.theme.ColorBackgroundLight
 import com.mu.tote_2024.utils.Routes
 import kotlinx.coroutines.delay
 

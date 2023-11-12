@@ -1,4 +1,4 @@
-package com.mu.tote_2024
+package com.mu.tote_2024.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,8 +7,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.mu.tote_2024.navigation.NavGraph
-import com.mu.tote_2024.ui.theme.Tote2024Theme
+import com.mu.tote_2024.R
+import com.mu.tote_2024.presentation.navigation.NavGraph
+import com.mu.tote_2024.presentation.theme.Tote2024Theme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

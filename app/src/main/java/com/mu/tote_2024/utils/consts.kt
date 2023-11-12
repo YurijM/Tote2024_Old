@@ -1,5 +1,13 @@
 package com.mu.tote_2024.utils
 
+import com.google.firebase.database.DatabaseReference
+import com.mu.tote_2024.domain.model.UserModel
+
+const val DEBUG_TAG = "tote2024"
+const val EMPTY = "empty"
+const val YEAR_START = 2023
+const val MIN_PASSWORD_LENGTH = 6
+
 object Routes {
     const val SPLASH_SCREEN = "splash_screen"
     const val MAIN_SCREEN = "main_screen"
@@ -11,3 +19,11 @@ object Routes {
     const val PROGNOSIS_SCREEN = "prognosis_screen"
     const val GAMES_SCREEN = "games_screen"
 }
+
+lateinit var REF_DB_ROOT: DatabaseReference
+
+var CURRENT_ID = ""
+var GAMBLER = UserModel()
+
+const val NODE_GAMBLERS = "gamblers"
+

@@ -1,4 +1,4 @@
-package com.mu.tote_2024.ui.theme
+package com.mu.tote_2024.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

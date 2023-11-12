@@ -1,4 +1,4 @@
-package com.mu.tote_2024.ui.theme
+package com.mu.tote_2024.presentation.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
