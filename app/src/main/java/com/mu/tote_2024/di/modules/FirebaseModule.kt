@@ -4,7 +4,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.mu.tote_2024.data.firebase.AuthRepositoryImpl
-import com.mu.tote_2024.domain.repository.AuthRepository
 import com.mu.tote_2024.domain.usecase.AuthUseCase
 import dagger.Module
 import dagger.Provides
@@ -36,5 +35,5 @@ object FirebaseModule {
 
     @Provides
     @Singleton
-    fun provideAuthUseCase(authRepository: AuthRepository) = AuthUseCase(authRepository)
+    fun provideAuthUseCase(authRepository: AuthRepositoryImpl) = AuthUseCase(authRepository)
 }
