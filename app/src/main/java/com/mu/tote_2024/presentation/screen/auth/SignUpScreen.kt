@@ -9,9 +9,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Password
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Surface
@@ -40,9 +37,9 @@ fun SignUpScreenPreview() {
 @SuppressLint("UnrememberedMutableState")
 @Composable
 fun SignUpScreen() {
-    val email = mutableStateOf("")
-    val password = mutableStateOf("")
-    val passwordConfirm = mutableStateOf("")
+    val email = mutableStateOf<String?>(null)
+    val password = mutableStateOf<String?>(null)
+    val passwordConfirm = mutableStateOf<String?>(null)
 
     Surface(
         modifier = Modifier
@@ -91,7 +88,7 @@ fun SignUpScreen() {
                             email.value = newValue
                         },
                         label = "Укажите свой email",
-                        imageVector = Icons.Default.Email,
+                        painterId = R.drawable.ic_mail,
                         description = "email",
                         errorMessage = "Поле не может быть пустым"
                     )
@@ -102,7 +99,7 @@ fun SignUpScreen() {
                         onChange = { newValue ->
                             password.value = newValue
                         },
-                        imageVector = Icons.Default.Password,
+                        painterId = R.drawable.ic_password,
                         description = "password",
                         errorMessage = "Поле должно содержать не меньше 6 символов"
                     )
@@ -113,7 +110,7 @@ fun SignUpScreen() {
                         onChange = { newValue ->
                             passwordConfirm.value = newValue
                         },
-                        imageVector = Icons.Default.Password,
+                        painterId = R.drawable.ic_password,
                         description = "passwordConfirm",
                         errorMessage = "Поле должно содержать не меньше 6 символов"
                     )

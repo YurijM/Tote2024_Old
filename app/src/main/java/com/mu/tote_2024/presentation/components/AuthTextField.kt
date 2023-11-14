@@ -5,28 +5,33 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.text.selection.TextSelectionColors
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mu.tote_2024.R
+import com.mu.tote_2024.presentation.theme.ColorApplication
+import com.mu.tote_2024.presentation.theme.ColorBackground
+import com.mu.tote_2024.presentation.theme.ColorText
 
 @Composable
 fun AuthTextField(
     label: String,
-    value: String,
+    value: String?,
     onChange: (newValue: String) -> Unit,
-    imageVector: ImageVector,
+    painterId: Int,
     description: String,
     errorMessage: String
 ) {
@@ -40,16 +45,36 @@ fun AuthTextField(
     Column {
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
-            value = value,
+            value = value ?: "",
+            shape = ShapeDefaults.Medium,
             onValueChange = { newValue ->
                 onChange(newValue)
             },
+            colors = TextFieldDefaults.colors(
+                cursorColor = ColorApplication,
+                selectionColors = TextSelectionColors(ColorBackground, ColorBackground),
+                errorTextColor = Color.Red,
+                errorContainerColor = Color.Transparent,
+                focusedContainerColor = Color.Transparent,
+                focusedTextColor = ColorText,
+                focusedLabelColor = ColorApplication,
+                focusedIndicatorColor = ColorApplication,
+                focusedLeadingIconColor = ColorApplication,
+                focusedTrailingIconColor = ColorApplication,
+                unfocusedContainerColor = Color.Transparent,
+                unfocusedTextColor = ColorApplication,
+                unfocusedIndicatorColor = ColorBackground,
+                unfocusedLabelColor = ColorBackground,
+                unfocusedLeadingIconColor = ColorBackground,
+                unfocusedTrailingIconColor = ColorBackground,
+            ),
             label = {
                 Text(text = label)
             },
             leadingIcon = {
                 Icon(
-                    imageVector = imageVector,
+                    modifier = Modifier.size(28.dp),
+                    painter = painterResource(id = painterId),
                     contentDescription = description
                 )
             },
@@ -80,8 +105,9 @@ fun AuthTextField(
                 }
             },
             isError = if (
-                value.isBlank()
-                || (label.contains("парол", true) && value.length <= 6)
+                (value != null)
+                && (value.isBlank()
+                        || (label.contains("парол", true) && value.length <= 6))
             ) {
                 hasError.value = true
                 true
@@ -100,7 +126,8 @@ fun AuthTextField(
                 ),
                 text = errorMessage,
                 color = Color.Red,
-                fontSize = 12.sp
+                fontSize = 12.sp,
+                lineHeight = 12.sp
             )
         }
     }
