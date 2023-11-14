@@ -13,15 +13,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.mu.tote_2024.R
+import com.mu.tote_2024.presentation.components.LogonButton
 import com.mu.tote_2024.presentation.theme.ColorBackgroundLight
-import com.mu.tote_2024.presentation.utils.LogonButton
+import com.mu.tote_2024.utils.Routes
 
-@Preview(showBackground = true)
 @Composable
-fun LogonScreen() {
+fun LogonScreen(
+    navController: NavController
+) {
     Surface(
         modifier = Modifier
             .fillMaxSize(),
@@ -35,6 +37,12 @@ fun LogonScreen() {
                 R.string.sign_up,
                 onClick = {
                     Log.d("tote2024", "SignUp")
+                    navController.navigate(Routes.SIGN_UP_SCREEN) {
+                        popUpTo(Routes.SPLASH_SCREEN) {
+                            inclusive = true
+                        }
+                    }
+
                 }
             )
             Spacer(modifier = Modifier.height(16.dp))

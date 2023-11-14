@@ -1,4 +1,4 @@
-package com.mu.tote_2024.presentation.utils
+package com.mu.tote_2024.presentation.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.material3.ButtonDefaults
