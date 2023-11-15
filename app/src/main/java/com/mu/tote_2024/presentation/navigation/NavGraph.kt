@@ -8,7 +8,7 @@ import com.mu.tote_2024.presentation.screen.auth.LogonScreen
 import com.mu.tote_2024.presentation.screen.auth.SignUpScreen
 import com.mu.tote_2024.presentation.screen.main_screen.MainScreen
 import com.mu.tote_2024.presentation.screen.splash_screen.SplashScreen
-import com.mu.tote_2024.utils.Routes
+import com.mu.tote_2024.utils.Constants.Routes
 
 @Composable
 fun NavGraph() {
@@ -25,7 +25,7 @@ fun NavGraph() {
             LogonScreen(navController = navController)
         }
         composable(Routes.SIGN_UP_SCREEN) {
-            SignUpScreen()
+            SignUpScreen(navController = navController)
         }
         composable(Routes.MAIN_SCREEN) {
             MainScreen()

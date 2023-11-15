@@ -34,7 +34,7 @@ import androidx.navigation.NavHostController
 import com.mu.tote_2024.R
 import com.mu.tote_2024.presentation.theme.ColorApplication
 import com.mu.tote_2024.presentation.theme.ColorBackgroundLight
-import com.mu.tote_2024.utils.Routes
+import com.mu.tote_2024.utils.Constants.Routes
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -1,7 +1,7 @@
 package com.mu.tote_2024.presentation.screen.main_screen
 
 import com.mu.tote_2024.R
-import com.mu.tote_2024.utils.Routes
+import com.mu.tote_2024.utils.Constants.Routes
 
 sealed class BottomNavItem(
     val titleId: Int,

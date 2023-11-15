@@ -14,4 +14,6 @@ val ColorApplication = Color(0xFF00838F)
 val ColorBackground = Color(0xFF89CCC6)
 val ColorBackgroundLight = Color(0xFFD1FAF7)
 val ColorText = Color(0xFF333333)
+val ColorDisabledBackground = Color(0xFFCCCCCC)
+val ColorDisabledText = Color(0xFF999999)
 

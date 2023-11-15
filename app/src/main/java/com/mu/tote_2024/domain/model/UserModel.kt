@@ -1,6 +1,6 @@
 package com.mu.tote_2024.domain.model
 
-import com.mu.tote_2024.utils.EMPTY
+import com.mu.tote_2024.utils.Constants.EMPTY
 
 data class UserModel(
     val userId: String? = null,

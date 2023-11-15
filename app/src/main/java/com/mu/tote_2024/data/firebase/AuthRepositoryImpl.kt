@@ -5,9 +5,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.mu.tote_2024.domain.model.NetworkResult
 import com.mu.tote_2024.domain.repository.AuthRepository
-import com.mu.tote_2024.utils.CURRENT_ID
-import com.mu.tote_2024.utils.DEBUG_TAG
-import com.mu.tote_2024.utils.GAMBLER
+import com.mu.tote_2024.utils.Constants.CURRENT_ID
+import com.mu.tote_2024.utils.Constants.DEBUG_TAG
+import com.mu.tote_2024.utils.Constants.GAMBLER
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
@@ -35,13 +35,13 @@ class AuthRepositoryImpl @Inject constructor(
                                 )
                             }
 
-                            Log.d(DEBUG_TAG, "Успешная регистрация участника: $CURRENT_ID")
+                            Log.d(DEBUG_TAG, "Успешная регистрация участника (uid = $CURRENT_ID)")
                         } else {
                             Log.d(DEBUG_TAG, "Ошибка при регистрации участника: ${task.exception}")
                         }
                     }.await()
 
-                if (GAMBLER.userId != null) {
+                if (CURRENT_ID.isNotBlank()) {
                     emit(NetworkResult.Success(true))
                 } else {
                     emit(NetworkResult.Fail("Ошибка при регистрации участника"))
@@ -67,20 +67,20 @@ class AuthRepositoryImpl @Inject constructor(
                                 TODO("Прочитать ветку данного игрока и записать в GAMBLER")
                             }
 
-                            Log.d(DEBUG_TAG, "Успешная авторизация участника: $CURRENT_ID")
+                            Log.d(DEBUG_TAG, "Успешная авторизация участника (uid = $CURRENT_ID)")
                         } else {
-                            Log.d(DEBUG_TAG, "createUserWithEmailAndPassword fail: ${task.exception}")
+                            Log.d(DEBUG_TAG, "Исключительная ситуация при авторизация участника: ${task.exception}")
                         }
                     }.await()
 
                 if (GAMBLER.userId != null) {
                     emit(NetworkResult.Success(true))
                 } else {
-                    emit(NetworkResult.Fail("Ошибка при авторизации игрока"))
+                    emit(NetworkResult.Fail("Ошибка при авторизации участника"))
                 }
 
             } catch(e: Exception) {
-                emit(NetworkResult.Fail(message = "Исключительная ситуация при авторизации игрока: ${e.localizedMessage ?: "что-то пошло не так"}"))
+                emit(NetworkResult.Fail(message = "Исключительная ситуация при авторизации участника: ${e.localizedMessage ?: "что-то пошло не так"}"))
             }
         }
     }
