@@ -73,7 +73,7 @@ class AuthRepositoryImpl @Inject constructor(
                         }
                     }.await()
 
-                if (GAMBLER.userId != null) {
+                if (CURRENT_ID.isNotBlank()) {
                     emit(NetworkResult.Success(true))
                 } else {
                     emit(NetworkResult.Fail("Ошибка при авторизации участника"))
