@@ -1,13 +1,16 @@
 package com.mu.tote_2024.data.firebase
 
 import android.util.Log
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.database
 import com.mu.tote_2024.domain.model.NetworkResult
 import com.mu.tote_2024.domain.repository.AuthRepository
 import com.mu.tote_2024.utils.Constants.CURRENT_ID
 import com.mu.tote_2024.utils.Constants.DEBUG_TAG
 import com.mu.tote_2024.utils.Constants.GAMBLER
+import com.mu.tote_2024.utils.Constants.NODE_GAMBLERS
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
@@ -33,6 +36,18 @@ class AuthRepositoryImpl @Inject constructor(
                                     userId = user.uid,
                                     email = email
                                 )
+                                Log.d(DEBUG_TAG, "GAMBLER: $GAMBLER")
+
+                                val database = Firebase.database.reference
+                                database
+                                    .child(NODE_GAMBLERS)
+                                    .child(CURRENT_ID)
+                                    .setValue(CURRENT_ID)
+
+                                /*firebaseDatabase.reference
+                                    .child(NODE_GAMBLERS)
+                                    .child(CURRENT_ID)
+                                    .setValue(GAMBLER)*/
                             }
 
                             Log.d(DEBUG_TAG, "Успешная регистрация участника (uid = $CURRENT_ID)")

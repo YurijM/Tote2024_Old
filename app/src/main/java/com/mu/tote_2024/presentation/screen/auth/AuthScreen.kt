@@ -21,7 +21,7 @@ import com.mu.tote_2024.presentation.theme.ColorBackgroundLight
 import com.mu.tote_2024.utils.Constants.Routes
 
 @Composable
-fun LogonScreen(
+fun AuthScreen(
     navController: NavController
 ) {
     Surface(
