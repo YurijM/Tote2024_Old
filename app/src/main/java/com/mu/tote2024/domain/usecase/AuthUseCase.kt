@@ -1,10 +1,10 @@
 package com.mu.tote2024.domain.usecase
 
-import com.mu.tote2024.data.firebase.AuthRepositoryImpl
+import com.mu.tote2024.domain.repository.AuthRepository
 import javax.inject.Inject
 
 class AuthUseCase @Inject constructor(
-    private val repository: AuthRepositoryImpl
+    private val repository: AuthRepository
 ) {
     suspend fun signUp(email: String, password: String) =
         repository.signUp(email, password)
