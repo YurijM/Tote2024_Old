@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.mu.tote_2024"
+    namespace = "com.mu.tote2024"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.mu.tote_2024"
+        applicationId = "com.mu.tote2024"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

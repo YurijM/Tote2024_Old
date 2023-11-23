@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "205431100957",
+    "firebase_url": "https://tote-2024-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "tote-2024",
     "storage_bucket": "tote-2024.appspot.com"
   },
@@ -9,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:205431100957:android:b628f3b411524d64b9d8f4",
         "android_client_info": {
-          "package_name": "com.mu.tote_2024"
+          "package_name": "com.mu.tote2024"
         }
       },
       "oauth_client": [],
